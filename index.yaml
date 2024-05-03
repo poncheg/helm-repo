@@ -1,0 +1,56 @@
+apiVersion: v1
+entries:
+  servicea:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2024-05-03T12:20:17.699376+03:00"
+    dependencies:
+    - alias: ingress-nginx-servicea
+      condition: ingress-nginx.enabled
+      name: ingress-nginx
+      repository: https://kubernetes.github.io/ingress-nginx
+      version: 4.10.0
+    - alias: postgresql-servicea
+      condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 13.4.4
+    - name: serviceb
+      repository: file://../../serviceb/helm
+      version: 0.1.0
+    description: A Helm chart for Kubernetes
+    digest: 46e7fa8e041b51c42ad9f6ce539f38801f07a8288b8c144a4e10cd9a63d1d6e6
+    keywords:
+    - business-logic-servicea
+    - metric
+    name: servicea
+    type: application
+    urls:
+    - https://raw.githubusercontent.com/poncheg/helm-repo/main/servicea-0.1.0.tgz
+    version: 0.1.0
+  serviceb:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2024-05-03T12:20:17.704153+03:00"
+    dependencies:
+    - alias: postgresql-serviceb
+      condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 13.4.4
+    - alias: minio-serviceb
+      condition: minio.enabled
+      name: minio
+      repository: https://charts.min.io/
+      version: 5.1.0
+    description: A Helm chart for Kubernetes
+    digest: e9b1ad5d4762f3a4031e35f72459d62a086abfd7fb4600a3d3f4d837dc1e3894
+    keywords:
+    - business-logic-serviceb
+    - metric
+    name: serviceb
+    type: application
+    urls:
+    - https://raw.githubusercontent.com/poncheg/helm-repo/main/serviceb-0.1.0.tgz
+    version: 0.1.0
+generated: "2024-05-03T12:20:17.683807+03:00"
